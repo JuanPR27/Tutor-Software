@@ -1,0 +1,15 @@
+fastapi[all]
+uvicorn
+psycopg2
+SQLAlchemy
+python-dotenv
+requests
+passlib[bcrypt]
+python-multipart
+python-jose[cryptography]
+google-generativeai
+pyasn1==0.4.8
+google-api-python-client
+pyinstaller
+aiofiles
+jinja2
