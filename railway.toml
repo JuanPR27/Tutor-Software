@@ -4,7 +4,7 @@ AUTH_SECRET_KEY = "clave_secreta_tutor_software_2025"
 ALGORITHM = "HS256"
 
 [build]
-command = "python -m pip install -r requirements.txt"
+command = "cd backend && pip install -r requirements.txt"
 
 [run]
-command = "python app/main.py"
+command = "cd backend && python app/main.py"
