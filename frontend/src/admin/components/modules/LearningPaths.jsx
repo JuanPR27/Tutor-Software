@@ -66,3 +66,5 @@ const LearningPaths = () => {
 };
 
 export default LearningPaths;
+
+

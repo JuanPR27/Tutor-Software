@@ -19,21 +19,22 @@ const VantaRingsBackground = () => {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0x88ff00,
-          backgroundColor: 0x202428,
+          backgroundColor: 0x000000,  // Negro
+          color: 0x3b82f6,           // Azul
+          color2: 0x10b981,          // Verde
           backgroundAlpha: 1
         })
       );
     }
 
     return () => {
-    if (vantaEffect) vantaEffect.destroy();
+      if (vantaEffect) vantaEffect.destroy();
     };
-   }, [vantaEffect]);
+  }, [vantaEffect]);
 
-    return (
-  <div ref={vantaRef} className="flex blur-[px] fixed w-full h-screen absolute top-0 left-0 -z-10" />
-);
+  return (
+    <div ref={vantaRef} className="flex blur-[px] fixed w-full h-screen absolute top-0 left-0 -z-10" />
+  );
 };
 
 export default VantaRingsBackground;

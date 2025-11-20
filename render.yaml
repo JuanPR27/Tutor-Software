@@ -1,4 +1,0 @@
-﻿version: 1
-build:
-  buildCommand: pip install -r requirements.txt
-  startCommand: python app/main.py

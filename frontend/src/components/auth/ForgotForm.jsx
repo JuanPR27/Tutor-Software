@@ -24,3 +24,4 @@ const ForgotForm = () => {
 };
 
 export default ForgotForm;
+

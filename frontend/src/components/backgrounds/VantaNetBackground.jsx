@@ -21,7 +21,7 @@ const VantaNetBackground = () => {
           scaleMobile: 1.0,
           color: 0x36c336,
           lineColor: 0xff3f81,  
-          backgroundColor: 0x95c595,
+          backgroundColor: 0x000000,
 
           points: 10.0,        // reduce el número de puntos => menos actividad
           maxDistance: 20.0,   // distancia máxima entre líneas (menor = más suaves)

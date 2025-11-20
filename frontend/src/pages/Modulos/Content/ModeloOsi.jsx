@@ -1,8 +1,12 @@
-import VantaRingsBackground from "../../../components/backgrounds/VantaRingsBackground";
+﻿import VantaRingsBackground from "../../../components/backgrounds/VantaRingsBackground";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function ModeloOsi() {
   const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [descripcion, setDescripcion] = useState("");
+
   return (
     <div className="relative min-h-screen flex flex-col text-white">
       <VantaRingsBackground />
@@ -14,201 +18,185 @@ export default function ModeloOsi() {
       </div>
       <main className="backdrop-blur-[10px] flex-1 p-6 relative z-10 mb-20">
         <div className="max-w-5xl text-center mx-auto mt-10">
-          <h1 className="text-4xl font-bold pt-10 mb-4 gap-2">Modelo OSI</h1>
-        </div>
-        <div className="border-t max-w-5xl mx-auto border-gray-200 mt-10"></div>
-
-        <div className="max-w-5xl mx-auto mt-10">
-          <p className="text-xl ">
-            El modelo Open Systems Interconnection (OSI) es un modelo conceptual
-            creado por la Organización Internacional para la Estandarización, el
-            cual permite que diversos sistemas de comunicación se conecten
-            usando protocolos estándar. En otras palabras, el OSI proporciona un
-            estándar para que distintos sistemas de equipos puedan comunicarse
-            entre sí. El modelo OSI se puede ver como un lenguaje universal para
-            la conexión de las redes de equipos. Se basa en el concepto de
-            dividir un sistema de comunicación en siete capas abstractas, cada
-            una apilada sobre la anterior.
-          </p>
-
-          <p className="text-xl mt-6">
-            Cada capa del modelo OSI tiene una función específica y se comunica
-            con las capas superiores e inferiores. Los ataques DDoS se dirigen a
-            capas específicas de una conexión de red, los ataques a la capa de
-            aplicación se dirigen a la capa 7, mientras que los ataques a la
-            capa de protocolo se dirigen a las capas 3 y 4
-          </p>
-        </div>
-
-        {/* CAPA 7 */}
-        <div className="grid grid-cols-2 grid-rows-7 gap-10 max-w-3xl mx-auto mt-10">
-          <div className="h-20 bg-purple-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-purple-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                7
-              </div>
-            </div>
-            <div className="col-span-7 bg-purple-100 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-purple-800">Aplicación</h3>
-            </div>
-          </div>
-
-          <div className="h-20 bg-gradient-to-r from-purple-100 to-purple-900 rounded-xl">
-            <p className="font-bold text-center mt-7">
-              Servicios de red a aplicaciones.
-            </p>
-          </div>
-
-          {/* CAPA 6 */}
-
-          {/* IZQUIERDA */}
-          <div className="h-20 bg-blue-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-blue-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                6
-              </div>
-            </div>
-            <div className="col-span-7 bg-blue-100 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-blue-800">Presentación</h3>
-            </div>
-
-            {/* Derecha */}
-          </div>
-          <div className="h-20 bg-gradient-to-r from-blue-100 to-blue-900 rounded-xl">
-            <p className="font-bold text-center mt-7">
-              Representación de datos y encriptación.
-            </p>
-          </div>
-
-          {/* CAPA 5 */}
-          <div className="h-20 bg-green-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-green-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                5
-              </div>
-            </div>
-            <div className="col-span-7 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-green-800">Sesion</h3>
-            </div>
-          </div>
-          <div className="h-20 bg-gradient-to-r from-green-100 to-green-900 rounded-xl">
-            <p className="font-bold text-center mt-7">
-              Comuinicacion entre dispositivos de red
-            </p>
-          </div>
-
-          {/* CAPA 4 */}
-          <div className="h-20 bg-yellow-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-yellow-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                4
-              </div>
-            </div>
-            <div className="col-span-7 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-yellow-800">Transporte</h3>
-            </div>
-          </div>
-
-          <div className="h-20 bg-gradient-to-r from-yellow-100 to-yellow-900 rounded-xl">
-            <p className="font-bold text-center mt-4 px-2">
-              Conexion de extremo a extremo y confiabilidad
-            </p>
-          </div>
-
-          {/* CAPA 3 */}
-          <div className="h-20 bg-red-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-red-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                3
-              </div>
-            </div>
-            <div className="col-span-7 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-red-800">Red</h3>
-            </div>
-          </div>
-          <div className="h-20 bg-gradient-to-r from-red-100 to-red-900 rounded-xl">
-            <p className="font-bold text-center mt-5">
-              Determinacion de ruta y direccionamiento logico
-            </p>
-          </div>
-
-          {/* CAPA 2 */}
-          <div className="h-20 bg-cyan-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-cyan-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                2
-              </div>
-            </div>
-            <div className="col-span-7 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-cyan-800">
-                Enlace de datos
-              </h3>
-            </div>
-          </div>
-          <div className="h-20 bg-gradient-to-r from-cyan-100 to-cyan-900 rounded-xl">
-            <p className="font-bold text-center mt-7">
-              Direccionamiento fisico
-            </p>
-          </div>
-
-          {/* CAPA 1 */}
-          <div className="h-20 bg-orange-100 rounded-xl">
-            <div className="col-span-1 relative">
-              <div className="bg-orange-600 text-white text-3xl font-bold p-4 rounded-r-lg shadow-lg absolute left-[-20px]">
-                1
-              </div>
-            </div>
-            <div className="col-span-7 p-4 px-4 rounded-lg px-10">
-              <h3 className="font-bold text-3xl text-orange-800">Física</h3>
-            </div>
-          </div>
-          <div className="h-20 bg-gradient-to-r from-orange-100 to-orange-900 rounded-xl">
-            <p className="font-bold text-center mt-7">
-              Señalizacion y transmision binaria
-            </p>
-          </div>
-        </div>
-
-        <div className="border-t max-w-5xl mx-auto mt-10 border-gray-200">
-          <h1 className="text-center mt-10 text-4xl font-bold">
-            CONTENIDO DE APOYO
+          <h1 className="text-4xl font-bold pt-10 mb-4 gap-2">
+            Vinculación Laboral
           </h1>
+          <p className="font-semibold">
+            Información sobre convenios, prácticas profesionales y oportunidades laborales
+          </p>
+          <div className="border-t mt-5 border-gray-500"></div>
         </div>
 
-        <div className="w-260 mx-auto grid grid-cols-4 grid-rows-2 gap-10 mt-10">
-          <div className="col-span-2 h-80 ">
-            <iframe
+        <div className="max-w-5xl mx-auto mt-10 text-xl ">
+          <h3>
+            La vinculación laboral es el proceso que conecta a los estudiantes con oportunidades
+            profesionales a través de convenios, prácticas y programas de empleabilidad.
+          </h3>
+        </div>
+
+        <div className="max-w-5xl mx-auto mt-10 font-bold">
+          <p>
+            Explora las siguientes áreas de vinculación laboral:
+          </p>
+        </div>
+
+        {/* SECCIONES DE VINCULACIÓN LABORAL */}
+
+        <div className="grid sm:grid-cols-1 md:grid-cols-6 grid-rows-4 mb-20 gap-7 mt-10 max-w-5xl mx-auto">
+
+        {/* PRÁCTICAS PROFESIONALES */}
+          <div
+            onClick={() => {
+              setDescripcion(
+                "Prácticas profesionales: Programas que permiten a estudiantes aplicar conocimientos en entornos laborales reales y adquirir experiencia profesional."
+              );
+              setModalOpen(true);
+            }}
+            className="col-span-2 row-span-2 backdrop-blur-[10px] h-60 rounded-xl bg-gradient-to-bl from-blue-500 to-purple-600 hover:scale-102 transition cursor-pointer shadow-lg"
+          >
+            <h1 className="text-center text-xl font-bold mt-5">Prácticas</h1>
+            <h3 className="text-center font-semibold text-3xl mt-10">Profesionales</h3>
+          </div>
+
+          {modalOpen && (
+            <div className=" fixed inset-0 flex mb-90 items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-xl">
+                <h2 className="text-xl font-bold mb-4 text-black ">Descripción</h2>
+                <p className="text-gray-700">{descripcion}</p>
+                <button
+                  onClick={() => setModalOpen(false)}
+                  className="cursor-pointer mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* CONVENIOS EMPRESARIALES */}
+          <div 
+          onClick={() => {
+              setDescripcion(
+                "Convenios empresariales: Acuerdos formales con empresas e instituciones para facilitar la inserción laboral de estudiantes y egresados."
+              );
+              setModalOpen(true);
+            }}
+          className="col-span-2 row-span-2 col-start-3 h-60 rounded-xl bg-gradient-to-t from-green-500 to-teal-600 hover:scale-102 transition cursor-pointer shadow-lg">
+            <h1 className="text-center text-xl font-bold mt-5">Convenios</h1>
+            <h3 className="text-center font-semibold text-3xl mt-10">Empresariales</h3>
+          </div>
+          {modalOpen && (
+            <div className="fixed inset-0 flex mb-90 items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-xl">
+                <h2 className="text-xl font-bold mb-4 text-black ">Descripción</h2>
+                <p className="text-gray-700">{descripcion}</p>
+                <button
+                  onClick={() => setModalOpen(false)}
+                  className="cursor-pointer mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* BOLSA DE EMPLEO */}
+          <div 
+          onClick={() => {
+              setDescripcion(
+                 "Bolsa de empleo: Servicio que conecta a estudiantes y egresados con oportunidades laborales en empresas asociadas a la universidad."
+              );
+              setModalOpen(true);
+            }}
+          className="col-span-2 row-span-2 col-start-5 h-60 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 hover:scale-102 transition cursor-pointer shadow-lg">
+            <h1 className="text-center text-xl font-bold mt-5">Bolsa de</h1>
+            <h3 className="text-center font-semibold text-3xl mt-10">Empleo</h3>
+          </div>
+
+          {modalOpen && (
+            <div className=" fixed inset-0 flex mb-90 items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-xl">
+                <h2 className="text-xl font-bold mb-4 text-black ">Descripción</h2>
+                <p className="text-gray-700">{descripcion}</p>
+                <button
+                  onClick={() => setModalOpen(false)}
+                  className="cursor-pointer mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* TALLERES DE EMPLEABILIDAD */}
+          <div 
+          onClick={() => {
+              setDescripcion(
+                 "Talleres de empleabilidad: Capacitaciones para mejorar habilidades de búsqueda de empleo, entrevistas y desarrollo profesional."
+              );
+              setModalOpen(true);
+            }}
+          className="col-span-2 row-span-2 col-start-2 row-start-3 h-60 rounded-xl bg-gradient-to-b from-purple-500 to-pink-600 hover:scale-102 transition cursor-pointer shadow-lg">
+            <h1 className="text-center text-xl font-bold mt-5">Talleres de</h1>
+            <h3 className="text-center font-semibold text-3xl mt-10">Empleabilidad</h3>
+          </div>
+          {modalOpen && (
+            <div className=" fixed inset-0 flex mb-90 items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-xl">
+                <h2 className="text-xl font-bold mb-4 text-black ">Descripción</h2>
+                <p className="text-gray-700">{descripcion}</p>
+                <button
+                  onClick={() => setModalOpen(false)}
+                  className="cursor-pointer mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* FERIAS LABORALES */}
+          <div 
+          onClick={() => {
+              setDescripcion(
+                  "Ferias laborales: Eventos donde empresas presentan oportunidades de empleo y estudiantes pueden establecer contactos profesionales."
+              );
+              setModalOpen(true);
+            }}
+          className="col-span-2 row-span-2 col-start-4 row-start-3 h-60 rounded-xl bg-gradient-to-tr from-teal-500 to-blue-600 hover:scale-102 transition cursor-pointer shadow-lg">
+            <h1 className="text-center text-xl font-bold mt-5">Ferias</h1>
+            <h3 className="text-center font-semibold text-3xl mt-10">Laborales</h3>
+          </div>
+        </div>
+        {modalOpen && (
+            <div className=" fixed inset-0 flex mb-90 items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-xl">
+                <h2 className="text-xl font-bold mb-4 text-black ">Descripción</h2>
+                <p className="text-gray-700">{descripcion}</p>
+                <button
+                  onClick={() => setModalOpen(false)}
+                  className="cursor-pointer mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          )}
+
+          <div className="border-t border-gray-200 max-w-5xl mx-auto mb-10">
+            <h1 className="text-4xl text-center mt-20 font-bold">CONTENIDO DE APOYO</h1>
+          </div>
+
+        <div className="max-w-5xl mx-auto aspect-video">
+          <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/jdKRx2BxSMs"
-            title="Modelos OSI y TCP (Explicado) Modelos Conceptuales"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Video sobre vinculación laboral"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="rounded-xl shadow-lg"
           ></iframe>
-          </div>
-          <div className="col-span-2 col-start-3">
-            <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/iNh-62Mf0O4"
-            title="Modelo de capas OSI y TCP/IP. Curso de redes desde 0 | Cap 12 |"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="rounded-xl shadow-lg"
-          ></iframe>
-          </div>
-          <div className="col-span-2 col-start-2 row-start-2">
-            <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/CnNRdJgeMo8"
-            title="Entendiendo el modelo OSI | ¿Como funciona el Internet?"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="rounded-xl shadow-lg"
-          ></iframe>
-          </div>
         </div>
       </main>
     </div>
