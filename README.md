@@ -6,17 +6,28 @@ Módulos Educativos: Apoyo Financiero y Vinculación Laboral
 Interfaz Moderna: Diseño responsive con fondos animados
 Sistema Completo: Autenticación, contenido interactivo y evaluaciones
 Tecnología Avanzada: React, FastAPI y bases de datos SQL
+
+
 📦 Estructura del Proyecto
  Tutor-Software-main/ 
+ 
 ├── backend/ # API FastAPI │
+
 ├── app/ # Lógica de la aplicación │
+
 ├── .env # Variables de entorno │
+
 └── requirements.txt
+
 ├── frontend/ # Aplicación React │
+
 ├── src/ # Código fuente │
+
 ├── public/ # Archivos estáticos │
+
 └── package.json
-└── venv/ # Entorno virtual Python ```
+
+└── venv/ # Entorno virtual Python 
 
 ⚡ Instalación Rápida
 Backend
