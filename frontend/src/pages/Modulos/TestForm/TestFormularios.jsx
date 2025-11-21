@@ -24,9 +24,7 @@ const TestFormularios = () => {
           setTitulo("Evaluación Modelo OSI");
         } else if (id === "2") {
           setTitulo("Evaluación Áreas de Cobertura");
-        } else if (id === "3") {
-          setTitulo("Evaluación Topologias de Red ");
-        }
+        } 
 
         setCargando(false);
       })
