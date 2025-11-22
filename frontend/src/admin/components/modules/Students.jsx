@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../../config";
 import { toast } from "react-toastify";
 import StudentForm from "../forms/StudentForm";
 
@@ -13,7 +14,7 @@ const StudentTable = () => {
   const fetchStudents = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/admin/students/", {
+      const response = await axios.get(`${API_URL}/admin/students/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStudents(response.data);
@@ -45,7 +46,7 @@ const StudentTable = () => {
     if (!confirm("¿Seguro que deseas eliminar este estudiante?")) return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:8000/admin/students/${id}`, {
+      await axios.delete(`${API_URL}/admin/students/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Estudiante eliminado correctamente");

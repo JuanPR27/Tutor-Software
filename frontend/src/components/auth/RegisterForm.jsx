@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { BsMicrosoft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../../config";
 
 export default function RegisterForm() {
   const navigate = useNavigate();
@@ -54,7 +55,8 @@ export default function RegisterForm() {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/user/register", {
+      console.log("Enviando solicitud a:", `${API_URL}/user/register`);
+      const response = await fetch(`${API_URL}/user/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -63,13 +65,14 @@ export default function RegisterForm() {
           correo: form.correo,
           contraseña: form.contraseña,
           tipoDocumento: form.tipoDocumento,
-          documento: form.documento,
-          grupo: form.grupo,
+          documento: parseInt(form.documento),
+          grupo: form.grupo || null,
           cargo: form.cargo,
         }),
       });
 
       const data = await response.json();
+      console.log("Respuesta del servidor:", data);
 
       if (response.ok) {
         setMessage({
@@ -82,13 +85,14 @@ export default function RegisterForm() {
       } else {
         setMessage({
           type: "error",
-          text: data.message || "Fallo en el registro.",
+          text: data.detail || data.message || "Fallo en el registro.",
         });
       }
     } catch (error) {
+      console.error("Error de conexión:", error);
       setMessage({
         type: "error",
-        text: "Error del servidor. Intenta más tarde.",
+        text: `Error del servidor: ${error.message}`,
       });
     }
   };

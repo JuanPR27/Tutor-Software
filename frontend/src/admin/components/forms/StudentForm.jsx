@@ -1,6 +1,7 @@
 // src/admin/components/StudentForm.jsx
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../../../config";
 import { toast } from "react-toastify";
 
 const StudentForm = ({ studentId, onClose, onUpdate }) => {
@@ -15,7 +16,7 @@ const StudentForm = ({ studentId, onClose, onUpdate }) => {
     const fetchStudent = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://localhost:8000/admin/students/${studentId}`, {
+        const res = await axios.get(`${API_URL}/admin/students/${studentId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setForm(res.data);
@@ -37,7 +38,7 @@ const StudentForm = ({ studentId, onClose, onUpdate }) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.put(`http://localhost:8000/admin/students/${studentId}`, form, {
+      await axios.put(`${API_URL}/admin/students/${studentId}`, form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Estudiante actualizado correctamente");

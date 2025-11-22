@@ -10,10 +10,17 @@ export const config = {
   }
 };
 
+// Fuerza la URL correcta en desarrollo
+if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+  // En desarrollo local
+}
+
 // URL actual basada en el entorno
-export const API_URL = import.meta.env.PROD 
-  ? config.production.apiUrl 
-  : config.development.apiUrl;
+// Si se ha definido `VITE_API_URL` (en .env o en el entorno), usarla.
+// Esto permite apuntar al backend público en Codespaces sin editar el código.
+export const API_URL = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL
+  : (import.meta.env.PROD ? config.production.apiUrl : config.development.apiUrl);
 
 export default config;
 

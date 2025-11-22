@@ -1,6 +1,7 @@
 // src/components/auth/LoginForm.jsx
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../config";
 import { BsMicrosoft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +19,7 @@ function LoginForm() {
   e.preventDefault();
   try {
     const response = await axios.post(
-      'http://localhost:8000/user/login',
+      `${API_URL}/user/login`,
       {
         correo: form.correo,
         contraseña: form.contraseña,
@@ -92,14 +93,14 @@ function LoginForm() {
         {error && <p className="text-red-500">{error}</p>}
       </form>
       <aside className="mt-4 text-sm text-gray-600">
-        <p className="flex justify-between -mt-5">
+        <div className="flex justify-between -mt-5">
           <a
             onClick={() => navigate("/forgot")}
             className="text-green-600 ml-5 cursor-pointer hover:text-green-500 font-semibold ml-1 transition duration-300"
           >
             Olvidaste la contraseña?
           </a>
-          <p>
+          <span>
             No tienes cuenta?
             <a
               onClick={() => navigate("/register")}
@@ -107,8 +108,8 @@ function LoginForm() {
             >
               Registrate
             </a>
-          </p>
-        </p>
+          </span>
+        </div>
         <div className="flex items-center my-3">
           <div className="flex-grow border-t border-black/30"></div>
           <span className="mx-4 text-gray-500">O</span>

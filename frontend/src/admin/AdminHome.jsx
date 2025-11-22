@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend } from "chart.js";
 import { Users, FileText, Book, Layers, BarChart3, Blend } from "lucide-react";
@@ -18,7 +19,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:8000/admin/dashboard", {
+        const res = await axios.get(`${API_URL}/admin/dashboard`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

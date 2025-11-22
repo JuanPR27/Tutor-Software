@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../../config";
 import VantaRingsBackground from "../../../components/backgrounds/VantaRingsBackground";
 
 const TestFormularios = () => {
@@ -14,7 +15,7 @@ const TestFormularios = () => {
   const [titulo, setTitulo] = useState("Evaluación");
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/evaluaciones/${id}`)
+    axios.get(`${API_URL}/evaluaciones/${id}`)
       .then((res) => {
         setPreguntas(res.data.preguntas);
         setRespuestas(Array(res.data.preguntas.length).fill(null));
@@ -51,7 +52,7 @@ const TestFormularios = () => {
       })),
     };
 
-    axios.post("http://localhost:8000/evaluaciones/enviar", payload)
+    axios.post(`${API_URL}/evaluaciones/enviar`, payload)
       .then((res) => {
         setPuntuacion(res.data.puntuacion);
       })
