@@ -14,7 +14,7 @@ import AreaCobertura from './pages/Modulos/Content/AreaCobertura'
 import ModeloOsi from './pages/Modulos/Content/ModeloOsi'
 import Test from './pages/Modulos/Test'
 import TestFormularios from './pages/Modulos/TestForm/TestFormularios'
-import Activities from './pages/Modulos/Activities'
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -37,9 +37,9 @@ function App() {
         <Route path='/content' element={<ProtectedRoute><Layout><Content /></Layout></ProtectedRoute>} />
         <Route path='/modeloosi' element={<ProtectedRoute><Layout><ModeloOsi /></Layout></ProtectedRoute>} />
         <Route path='/areacobertura' element={<ProtectedRoute><Layout><AreaCobertura /></Layout></ProtectedRoute>} />
-        <Route path="/test" element={<ProtectedRoute><Layout><Test /></Layout></ProtectedRoute>} />
         <Route path="/test/:id" element={<ProtectedRoute><Layout><TestFormularios /></Layout></ProtectedRoute>} />
-        <Route path="/activities" element={<ProtectedRoute><Layout><Activities /></Layout></ProtectedRoute>} />
+        {/* Agregué también la ruta para Test si la necesitas */}
+        <Route path="/test" element={<ProtectedRoute><Layout><Test /></Layout></ProtectedRoute>} />
       </Routes>
     </div>
   )

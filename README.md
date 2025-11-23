@@ -33,8 +33,8 @@ Tecnología Avanzada: React, FastAPI y bases de datos SQL
 Backend
 bash
 	cd backend
-	python3 -m venv .venv
-	source .venv/bin/activate
+	python3 -m venv .venv                                            ''' py thon -m venv .venv'''
+	source .venv/bin/activate                                        '''.venv\Scripts\Activate.ps1'''
 	pip install --upgrade pip setuptools wheel
 	pip install -r requirements.txt
 	# Para ejecutar el backend:

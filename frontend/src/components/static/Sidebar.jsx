@@ -14,8 +14,7 @@ import { Link } from 'react-router-dom';
 const navigation = [
   { name: 'Inicio', icon: HomeIcon, to: '/home' },
   { name: 'Contenido', icon: BookOpenIcon, to: '/content' },
-  { name: 'Evaluaciones', icon: ClipboardDocumentCheckIcon, to: '/test' },
-  { name: 'Ejercicios', icon: Square3Stack3DIcon, to: '/activities' },  
+  { name: 'Evaluaciones', icon: ClipboardDocumentCheckIcon, to: '/test' }, 
 ];
 
 const teams = [''];
